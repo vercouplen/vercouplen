@@ -1,0 +1,6 @@
+module Pods_vercouplen {
+  umbrella header "Pods-vercouplen-umbrella.h"
+
+  export *
+  module * { export * }
+}

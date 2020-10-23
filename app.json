@@ -1,0 +1,12 @@
+{
+  "name": "vercouplen",
+  "displayName": "vercouplen",
+  "expo": {
+    "name": "vercouplen",
+    "slug": "vercouplen",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
