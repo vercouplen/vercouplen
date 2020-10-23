@@ -4,10 +4,11 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "web": "expo start --web",
-    "start": "react-native start",
     "test": "jest",
     "start-web": "react-scripts start",
-    "build-web": "react-scripts build"
+    "build-web": "react-scripts build",
+    "build": "webpack --mode production",
+    "start": "webpack serve --config ./webpack.config.js --mode development"
   },
   "dependencies": {
     "expo": "~39.0.2",
@@ -29,9 +30,14 @@
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
     "babel-jest": "~25.2.6",
+    "babel-loader": "^8.1.0",
+    "html-loader": "^0.5.5",
     "jest": "~25.2.6",
-    "react-test-renderer": "~16.13.1"
+    "react-test-renderer": "~16.13.1",
+    "webpack-cli": "^4.1.0"
   },
   "jest": {
     "preset": "react-native"
