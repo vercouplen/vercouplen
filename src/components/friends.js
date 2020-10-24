@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, TextInput, Text, Linking, View } from 'react-native';
-import db from "../firebase/firebase.js";
+import db from "../firebase/config";
 
 class Friends extends React.Component {
   state = {
@@ -10,14 +10,6 @@ class Friends extends React.Component {
     phone: '',
   }
 
-  invite_whatsapp(url, stage) {
-    if(Platform.OS == 'web'){
-      window.open(url, '_blank');
-    } else {
-      Linking.openURL(url)
-    }
-    this.setState({stage: stage})
-  }
 
   handleNameChange = (event) => {
     this.setState({name: event.target.value});
@@ -35,15 +27,15 @@ class Friends extends React.Component {
       phone: this.state.phone,
     }
 
-    db.collection("friends").add({
+    db.collection("Friends").add({
       Name: friend.name,
       Phone: friend.phone
     })
-    .then(function (docRef) {
+    .then((docRef) => {
       console.log("document written with ID: ", docRef.id);
-      this.setState({stage: "added_number"})
+      this.setState({stage: 'added_number'});
     })
-    .catch(function (error) {
+    .catch((error) => {
       console.log("error adding doc", error);
     });
 
@@ -67,6 +59,7 @@ class Friends extends React.Component {
             </label>
             <button type="submit">Teilnehmen</button>
           </form>
+          <StatusBar style="auto" />
         </View>
       );
     }
@@ -75,6 +68,7 @@ class Friends extends React.Component {
       return(
       <View>
         <Text>Marissa fügt Dich zur Gruppe am 30. Oktober hinzu. Bis dann!</Text>
+        <StatusBar style="auto" />
       </View>
       )
     }

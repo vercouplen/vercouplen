@@ -1,12 +1,12 @@
-import React from 'react';
-import * as firebase from 'firebase';
-import '@firebase/firestore';
+// Firebase App (the core Firebase SDK) is always required and
+// must be listed before other Firebase SDKs
+const firebase = require("firebase");
 
-<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
-
+// Add the Firebase products that you want to use
+require("firebase/firestore");
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
+var firebaseConfig = {
     apiKey: "AIzaSyB_8Y0gc75wybv00PN2X2ZS0O4-j94EQto",
     authDomain: "vercouplen.firebaseapp.com",
     databaseURL: "https://vercouplen.firebaseio.com",
@@ -16,8 +16,8 @@ const firebaseConfig = {
     appId: "1:648584206579:web:c482cac630ad80b348ff86",
   };
   
-
 firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
 
-export default { db };
+var db = firebase.firestore();
+
+export default db;
