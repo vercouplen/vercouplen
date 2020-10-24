@@ -8,6 +8,7 @@ class FriendsOfFriends extends React.Component {
     stage: 'none',
     name: '',
     phone: '',
+    inviterName: '',
   }
 
 
@@ -41,12 +42,27 @@ class FriendsOfFriends extends React.Component {
 
 
   }
+
+  getInviterName = () => {
+    // To-Do: ADD INVTIER ID BY URL PROPS (PASSED INTO FROM PARENT COMPONENT)
+    var inviterID = '';
+    var docRef = db.collection("Friends").doc(inviterID);
+    docRef.get().then((doc) => {
+      if (doc.exists) {
+        this.setState({inviterName: doc.Name})
+        console.log("successfully added friend ", doc.Name)
+      }
+      else {
+        console.log("no such Friend existing")
+      }
+    })
+  }
   
   render() {
     if(this.state.stage == 'none') {
       return (
         <View>
-          <Text>Du wurdest zu einer Party am Freitag, 30. Oktober, eingeladen.</Text>
+          <Text>{this.state.inviterName} hat Dich zu einer Party am Freitag, 30. Oktober, eingeladen.</Text>
           <Text>Nimm an der Party teil und lern neue Leute kennen</Text>
           <form onSubmit = {this.handleSubmit}>
             <label>
