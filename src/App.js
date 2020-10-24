@@ -19,8 +19,9 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Facilitators} />
             <Route path="/besties" component={Besties} />
-            <Route path="/friends" component={Friends}/>         
-            <Route path="/friendsoffriends" component={FriendsOfFriends}/>           
+            <Route path="/friends" component={Friends}/>
+            <Route exact path="/friendsoffriends" component={FriendsOfFriends}/>
+            <Route path="/friendsoffriends/:friendid" component={FriendsOfFriends}/>
             </Switch>
         </Router>
       </View>

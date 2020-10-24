@@ -4,6 +4,11 @@ import { StyleSheet, TextInput, Text, Linking, View } from 'react-native';
 import db from "../firebase/config";
 
 class FriendsOfFriends extends React.Component {
+
+  constructor(props) {
+    super(props)
+  }
+
   state = {
     stage: 'none',
     name: '',

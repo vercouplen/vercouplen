@@ -48,6 +48,11 @@ module.exports = {
     },
     extensions: [".web.js", ".js"]
   },
+  output: {
+    filename: 'bundle.js',
+    path: '/dist',
+    publicPath: '/',
+  },
   devServer: {
     historyApiFallback: true,
     contentBase: "./",

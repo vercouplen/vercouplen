@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, TextInput, Text, Linking, View, TouchableOpacity} from 'react-native';
+import { Platform, StyleSheet, TextInput, Text, Linking, View, TouchableOpacity} from 'react-native';
 import db from "../firebase/config";
 
 class Friends extends React.Component {
