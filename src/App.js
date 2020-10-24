@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import { StyleSheet, Text, Linking, View } from 'react-native';
 
 export default function App() {
+  
   return (
     <View style={styles.container}>
       <Text>Lade Deine drei besten Freunde zur Party via Whatsapp ein:</Text>
