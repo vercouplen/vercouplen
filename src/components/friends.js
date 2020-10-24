@@ -1,20 +1,45 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react'
-import { StyleSheet, Text, Linking, View } from 'react-native';
+import { StyleSheet, TextInput, Text, Linking, View } from 'react-native';
 
 class Friends extends React.Component {
+  state = {
+    stage: 'none'
+  }
+
+  invite_whatsapp(url, stage) {
+    if(Platform.OS == 'web'){
+      window.open(url, '_blank');
+    } else {
+      Linking.openURL(url)
+    }
+    this.setState({stage: stage})
+  }
+  
   render() {
-    return (
+    if(this.state.stage == 'none') {
+      return (
         <View>
-          <Text>Freund</Text>
-          <Text>Lade Deine drei besten Freunde zur Party via Whatsapp ein:</Text>
-          <Text style={{color: 'blue'}}
-          onPress={() => Linking.openURL('https://wa.me/?text=Hey,%20lange%20nicht%20gequatscht!%20Ich%20schmeiß%20ne%20kleine%20Virtuelle%20Kennenlernparty%2C%20hast%20du%20Lust%20ein%20paar%20neue%20Leute%20kennenzulernen%3F%20%3A%29%20https://getustogether.netlify.com/friends')}>
-      Freunde einladen
-      </Text>
-          <StatusBar style="auto" />
+          <Text>Marissa Rimmele hat dich zu ihrer Party am Freitag, 30. Oktober, eingeladen.</Text>
+          <Text>Lerne ihre besten Freunde kennen:</Text>
+          <TextInput 
+                placeholder="Whatsapp-Nummer" 
+                />
+          <TextInput
+                placeholder="Name"
+                />
+          <Text style={{color: 'blue'}} onPress={() => this.setState({stage: 'added_number'})}>Teilnehmen</Text>
         </View>
       );
+    }
+    
+    if(this.state.stage == 'added_number') {
+      return(
+      <View>
+        <Text>Marissa fügt Dich zur Gruppe am 30. Oktober hinzu. Bis dann!</Text>
+      </View>
+      )
+    }
   }
 }
 export default Friends

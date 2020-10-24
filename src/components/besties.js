@@ -4,24 +4,37 @@ import {StyleSheet, Text, TextInput, View } from 'react-native';
 
 class Besties extends React.Component {
   state = {
-    toggleScreen: false,
+    stage: 'none'
   };
 
   render() {
-    return (
+    if(this.state.stage == 'none') {
+      return (
         <View>
-          <Text>Marissa hat dich zu ihrer Party am Freitag, 30. Oktober, eingeladen, damit du neue Leute kennenlernen kannst!</Text>
-          <br/>
-            <Text>Trag' deinen Namen und Whatsapp-Nummer ein, um an der Party teilzunehmen. </Text>
-            <TextInput 
-              placeholder="Whatsapp-Nummer" />
-            <TextInput
-              placeholder="Name"
-            />
-            <Text>Marissa fügt dich zur Whatsappgruppe hinzu, sobald die Party beginnt. Happy connecting!</Text>
+          <Text>Marissa hat dich zu ihrer Party am Freitag, 30. Oktober, eingeladen!</Text>
+          <Text>Lerne Marissas erweiterten Freundeskreis kennen:</Text>
+          <TextInput 
+                placeholder="Whatsapp-Nummer" 
+                />
+          <TextInput
+                placeholder="Name"
+                />
+          {console.log(this.state.stage)}
+          <Text style={{color: 'blue'}} onPress={() => this.setState({stage: 'added_number'})}>Teilnehmen</Text>
+          {console.log(this.state.stage)}
           <StatusBar style="auto" />
         </View>
       );
+    }
+    
+    if(this.state.stage == 'added_number') {
+      return(
+      <View>
+        <Text>Marissa fügt Dich am 30. Oktober zur Gruppe hinzu. Bis dann!</Text>
+        <StatusBar style="auto" />
+      </View>
+      )
+    }
   }
 }
 export default Besties
