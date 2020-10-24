@@ -13,7 +13,7 @@ class App extends Component {
   render() {
       return (
       <View style={styles.container}>
-        <h1>Vercouplen</h1>
+        <Text>Vercouplen</Text>
         <Router>
           <Switch>
             <Route exact path="/" component={Facilitators} />
