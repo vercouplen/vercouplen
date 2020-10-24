@@ -13,7 +13,7 @@ class App extends Component {
 
       return (
       <View style={styles.container}>
-        <h1>Vercouplen</h1>
+        <Text style={styles.titleText}>Vercouplen</Text>
         <Router>
           <Switch>
             <Route exact path="/" component={Facilitators} />
@@ -28,12 +28,16 @@ class App extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: '50px',
+    marginTop: 50,
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#F5F5F5',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  titleText: {
+    fontSize: 20,
+    fontWeight: "bold"
+  }
 });
 
 export default App
