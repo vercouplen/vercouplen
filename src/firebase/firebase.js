@@ -1,4 +1,5 @@
 import * as firebase from 'firebase';
+import React from 'react';
 import '@firebase/firestore';
 
 <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
@@ -21,4 +22,4 @@ if (!firebase.apps.length) {
 
 const db = firebase.firestore();
 
-export { db };
+export default { db };
