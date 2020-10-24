@@ -8,12 +8,8 @@ import Facilitators from './components/facilitators';
 
 import { Router, Switch, Route } from './routing/routing';
 
-import db from "./firebase/firebase.js";
-
-
 class App extends Component {
   render() {
-      const database = db;
 
       return (
       <View style={styles.container}>
@@ -22,7 +18,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Facilitators} />
             <Route path="/besties" component={Besties} />
-            <Route path="/friends" render={(database) => <Friends {...database}/>}/>          
+            <Route path="/friends" component={Friends}/>          
             </Switch>
         </Router>
       </View>

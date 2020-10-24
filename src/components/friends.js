@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, TextInput, Text, Linking, View } from 'react-native';
-
+import db from "../firebase/firebase.js";
 
 class Friends extends React.Component {
   state = {
@@ -23,7 +23,7 @@ class Friends extends React.Component {
     this.setState({name: event.target.value});
   }
 
-  hanldePhoneChange= (event) => {
+  handlePhoneChange = (event) => {
     this.setState({phone: event.target.value});
   }
 
@@ -34,9 +34,6 @@ class Friends extends React.Component {
       name: this.state.name,
       phone: this.state.phone,
     }
-    console.log(friend);
-
-    var db = this.props.firebase.firestore();
 
     db.collection("friends").add({
       Name: friend.name,
@@ -66,7 +63,7 @@ class Friends extends React.Component {
             </label>
             <label>
               Whatsapp-Nummer
-              <input type="text" phone={this.state.phone} onChange={this.hanldePhoneChange}/>
+              <input type="text" phone={this.state.phone} onChange={this.handlePhoneChange}/>
             </label>
             <button type="submit">Teilnehmen</button>
           </form>
