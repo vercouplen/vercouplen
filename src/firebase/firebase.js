@@ -1,5 +1,4 @@
 import * as firebase from 'firebase';
-import '@firebase/auth';
 import '@firebase/firestore';
 
 <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
@@ -20,4 +19,6 @@ if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
 }
 
-export { firebase };
+const db = firebase.firestore();
+
+export { db };

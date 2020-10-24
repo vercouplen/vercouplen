@@ -19,9 +19,7 @@ class Besties extends React.Component {
           <TextInput
                 placeholder="Name"
                 />
-          {console.log(this.state.stage)}
           <Text style={{color: 'blue'}} onPress={() => this.setState({stage: 'added_number'})}>Teilnehmen</Text>
-          {console.log(this.state.stage)}
           <StatusBar style="auto" />
         </View>
       );
