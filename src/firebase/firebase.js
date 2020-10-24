@@ -1,5 +1,5 @@
-import * as firebase from 'firebase';
 import React from 'react';
+import * as firebase from 'firebase';
 import '@firebase/firestore';
 
 <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
@@ -16,10 +16,8 @@ const firebaseConfig = {
     appId: "1:648584206579:web:c482cac630ad80b348ff86",
   };
   
-if (!firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig);
-}
 
+firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 export default { db };
