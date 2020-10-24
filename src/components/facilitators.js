@@ -2,20 +2,25 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react'
 import { StyleSheet, Text, Linking, View } from 'react-native';
 
-class Besties extends React.Component {
+class Facilitators extends React.Component {
+  state = {
+    stage: 0
+  }
+  
+  invite_whatsapp() {
+    Linking.openURL('https://wa.me/?text=Du%20solltest%20mal%20wieder%20neue%20Leute%20kennenlernen%20!%20Meld%20Dich%20mal%20an:%20https://getustogether.netlify.app/besties')
+  }
+
   render() {
     return (
-        <View>
-        <Text>Du wurdest zur Party am Freitag, 30. Oktober, eingeladen, damit du neue Leute kennenlernen kannst!
-Trage jetzt deinen Namen und Telefonnummer ein: Damit kann Marissa Dich zur Whatsappgruppe hinzufügen, sobald die Party am Freitag 30. Oktober beginnt. Happy connecting!</Text>
-          <Text>Lade Deine drei besten Freunde zur Party via Whatsapp ein:</Text>
-          <Text style={{color: 'blue'}}
-          onPress={() => Linking.openURL('https://wa.me/?text=Hey,%20lange%20nicht%20gequatscht!%20Ich%20schmeiß%20ne%20kleine%20Virtuelle%20Kennenlernparty%2C%20hast%20du%20Lust%20ein%20paar%20neue%20Leute%20kennenzulernen%3F%20%3A%29%20https://getustogether.netlify.com/friends')}>
-      Freunde einladen
-      </Text>
-          <StatusBar style="auto" />
-        </View>
+    <View>
+      <Text>Lade Deine drei besten Freunde zur Party via Whatsapp ein:</Text>
+      <Text style={{color: 'blue'}} onPress={this.invite_whatsapp}>Freunde einladen</Text>
+      <StatusBar style="auto" />
+    </View>
       );
   }
+
+
 }
-export default Besties
+export default Facilitators

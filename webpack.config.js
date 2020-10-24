@@ -7,9 +7,10 @@ module.exports = {
         exclude: /node_modules\/(?!()\/).*/,
         use: {
           loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"],
-          },
+          query: {
+            presets: ['@babel/preset-react'],
+            plugins: ["transform-class-properties"]
+          }
         },
       },
       {
@@ -19,6 +20,19 @@ module.exports = {
             loader: "html-loader",
           },
         ],
+      },
+      {
+        test: /\.css$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          'style-loader',
+          // Translates CSS into CommonJS
+          'css-loader'
+        ],
+      },
+      {
+        test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+        loader: 'file-loader'
       },
     ],
   },
