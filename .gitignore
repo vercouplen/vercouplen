@@ -152,3 +152,7 @@ package-lock.json
 # Android memory profiler files
 *.hprof
 
+<<<<<<< HEAD
+=======
+.expo/packager-info.json
+>>>>>>> fb6b1aa1f40850b879bcdc2148cc353c91a5b47e
