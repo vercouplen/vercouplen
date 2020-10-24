@@ -6,7 +6,7 @@ import Besties from './components/besties';
 import Friends from './components/friends';
 import Facilitators from './components/facilitators';
 
-import { Router, Switch, Route, IndexRoute } from './routing/routing';
+import { Router, Switch, Route } from './routing/routing';
 
 
 class App extends Component {
