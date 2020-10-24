@@ -70,7 +70,7 @@ class Besties extends React.Component {
     if(this.state.stage == 'added_number') {
       return(
       <View>
-        <Text>Marissa fügt Dich am 30. Oktober zur Gruppe hinzu. Bis dann!</Text>
+        <Text>Marissa fügt Dich am 30. Oktober zur Gruppe hinzu.</Text>
         <StatusBar style="auto" />
       </View>
       )

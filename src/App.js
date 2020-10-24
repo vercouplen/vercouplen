@@ -4,6 +4,7 @@ import { StyleSheet, Text, Linking, View } from 'react-native';
 
 import Besties from './components/besties';
 import Friends from './components/friends';
+import FriendsOfFriends from './components/friendsoffriends';
 import Facilitators from './components/facilitators';
 
 import { Router, Switch, Route } from './routing/routing';
@@ -18,7 +19,8 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Facilitators} />
             <Route path="/besties" component={Besties} />
-            <Route path="/friends" component={Friends}/>          
+            <Route path="/friends" component={Friends}/>         
+            <Route path="/friendsoffriends" component={FriendsOfFriends}/>           
             </Switch>
         </Router>
       </View>
