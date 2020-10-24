@@ -10,14 +10,6 @@ class Friends extends React.Component {
     phone: '',
   }
 
-  invite_whatsapp(url, stage) {
-    if(Platform.OS == 'web'){
-      window.open(url, '_blank');
-    } else {
-      Linking.openURL(url)
-    }
-    this.setState({stage: stage})
-  }
 
   handleNameChange = (event) => {
     this.setState({name: event.target.value});
@@ -34,7 +26,7 @@ class Friends extends React.Component {
       name: this.state.name,
       phone: this.state.phone,
     }
-    
+
     db.collection("Friends").add({
       Name: friend.name,
       Phone: friend.phone
@@ -67,6 +59,7 @@ class Friends extends React.Component {
             </label>
             <button type="submit">Teilnehmen</button>
           </form>
+          <StatusBar style="auto" />
         </View>
       );
     }
@@ -75,6 +68,7 @@ class Friends extends React.Component {
       return(
       <View>
         <Text>Marissa fügt Dich zur Gruppe am 30. Oktober hinzu. Bis dann!</Text>
+        <StatusBar style="auto" />
       </View>
       )
     }
