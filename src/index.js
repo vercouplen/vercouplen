@@ -1,7 +1,6 @@
 // src/index.js
 import React from 'react';
 import ReactDom from 'react-dom';
-import App from './App';
 import Besties from './components/besties'
 import Friends from './components/friends'
 import Facilitators from './components/facilitators'

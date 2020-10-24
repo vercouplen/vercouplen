@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react'
 import { StyleSheet, Text, Linking, View } from 'react-native';
 
-class Besties extends React.Component {
+class Friends extends React.Component {
   render() {
     return (
         <View>
@@ -16,4 +16,4 @@ class Besties extends React.Component {
       );
   }
 }
-export default Besties
+export default Friends
