@@ -50,7 +50,7 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js',
-    path: '/dist',
+    path: __dirname + "/dist",
     publicPath: '/',
   },
   devServer: {
