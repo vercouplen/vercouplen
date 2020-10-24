@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter'), url(./../resources/fonts/Inter.ttf) format('truetype');
+  }
+
+body {
+    font-family: 'Inter'
+  }
+  .heading {
+    font-weight: 700;
+  }
+  .subheading {
+    font-weight: 300;
+  }
