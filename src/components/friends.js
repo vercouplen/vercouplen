@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, TextInput, Text, Linking, View, TouchableOpacity} from 'react-native';
+import { StyleSheet, TextInput, Text, Linking, View, TouchableOpacity, Platform} from 'react-native';
 import db from "../firebase/config";
 
 class Friends extends React.Component {
@@ -8,6 +8,7 @@ class Friends extends React.Component {
     stage: 'none',
     name: '',
     phone: '',
+    submittedID: '',
   }
 
   invite_whatsapp(url, stage) {
@@ -42,6 +43,7 @@ class Friends extends React.Component {
     .then((docRef) => {
       console.log("document written with ID: ", docRef.id);
       this.setState({stage: 'added_number'});
+      this.setState({submittedID: docRef.id});
     })
     .catch((error) => {
       console.log("error adding doc", error);
@@ -77,9 +79,9 @@ class Friends extends React.Component {
       <View>
         <Text>Marissa fügt Dich zur Gruppe am 30. Oktober hinzu.</Text>
         <View style={{ marginTop: 10}}>
-        <Text>Lade deine Freunde zur Party via Whatsapp ein:</Text>
+        <Text>Bringe deine Freunde zur Party mit – via Whatsapp!</Text>
         </View>
-        <TouchableOpacity onPress={() => this.invite_whatsapp('https://wa.me/?text=Du%20solltest%20mal%20wieder%20neue%20Leute%20kennenlernen%20!%20Meld%20Dich%20mal%20an:%20https://getustogether.netlify.app/friendsoffriends', 'added_number')}>
+        <TouchableOpacity onPress={() => this.invite_whatsapp('https://wa.me/?text=Du%20solltest%20mal%20wieder%20neue%20Leute%20kennenlernen%20!%20Meld%20Dich%20mal%20an:%20https://getustogether.netlify.app/friendsoffriend/'+this.state.submittedID, 'added_number')}>
           <View
             style={{
               backgroundColor: '#195e83',

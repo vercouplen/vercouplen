@@ -27,7 +27,7 @@ class FriendsOfFriends extends React.Component {
       phone: this.state.phone,
     }
 
-    db.collection("Friends").add({
+    db.collection("FriendsOfFriends").add({
       Name: friend.name,
       Phone: friend.phone
     })
@@ -47,7 +47,7 @@ class FriendsOfFriends extends React.Component {
       return (
         <View>
           <Text>Du wurdest zu einer Party am Freitag, 30. Oktober, eingeladen.</Text>
-          <Text>Lerne neue Leute kennen:</Text>
+          <Text>Nimm an der Party teil und lern neue Leute kennen</Text>
           <form onSubmit = {this.handleSubmit}>
             <label>
               Name
