@@ -18,17 +18,18 @@ class FriendsOfFriends extends React.Component {
   }
 
 
-  handleNameChange = (event) => {
-    this.setState({name: event.target.value});
+  handleNameChange = (text) => {
+    this.setState({name: text});
   }
 
-  handlePhoneChange = (event) => {
-    this.setState({phone: event.target.value});
+  handlePhoneChange = (text) => {
+    this.setState({phone: text});
   }
 
   handleSubmit = (event) => {
-    event.preventDefault();
-
+    if(this.state.name == '' || this.state.phone == '') {
+      return;
+    }
     const friend = {
       name: this.state.name,
       phone: this.state.phone,
@@ -69,17 +70,19 @@ class FriendsOfFriends extends React.Component {
         <View>
           <Text>{this.state.inviterName} hat Dich zu einer Party am Freitag, 30. Oktober, eingeladen.</Text>
           <Text>Nimm an der Party teil und lerne neue Leute kennen:</Text>
-          <form onSubmit = {this.handleSubmit}>
-            <label>
-              Name
-              <input type="text" name={this.state.name} onChange={this.handleNameChange}/>
-            </label>
-            <label>
-              Whatsapp-Nummer
-              <input type="text" phone={this.state.phone} onChange={this.handlePhoneChange}/>
-            </label>
-            <button type="submit">Teilnehmen</button>
-          </form>
+          <TextInput
+            onChangeText={(text) => this.handleNameChange(text)}
+            placeholder="Name"
+            value={this.state.name}
+            style={styles.input}
+          ></TextInput>
+          <TextInput
+            onChangeText={(text) => this.handlePhoneChange(text)}
+            placeholder="Phone Number"
+            value={this.state.phone}
+            style={styles.input}
+          ></TextInput>
+        <OurButton onPress={() => this.handleSubmit()} label="Teilnehmen"/>
           <StatusBar style="auto" />
         </View>
       );
@@ -95,4 +98,16 @@ class FriendsOfFriends extends React.Component {
     }
   }
 }
+
+const styles = StyleSheet.create({
+  form: {
+    padding: 20
+  },
+  titleText: {
+    fontSize: 20,
+    fontWeight: "bold"
+  }
+});
+
+
 export default FriendsOfFriends

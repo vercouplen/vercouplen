@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Platform, StyleSheet, TextInput, Text, Linking, View, TouchableOpacity} from 'react-native';
 import db from "../firebase/config";
+import OurButton from './button';
 
 class Friends extends React.Component {
   state = {
@@ -20,16 +21,19 @@ class Friends extends React.Component {
     this.setState({stage: stage})
   }
 
-  handleNameChange = (event) => {
-    this.setState({name: event.target.value});
+  handleNameChange = (text) => {
+    this.setState({name: text});
   }
 
-  handlePhoneChange = (event) => {
-    this.setState({phone: event.target.value});
+  handlePhoneChange = (text) => {
+    this.setState({phone: text});
   }
 
-  handleSubmit = (event) => {
-    event.preventDefault();
+  handleSubmit = () => {
+
+    if(this.state.name == '' || this.state.phone == '') {
+      return;
+    }
 
     const friend = {
       name: this.state.name,
@@ -57,19 +61,21 @@ class Friends extends React.Component {
       return (
         <View>
           <Text>Marissa Rimmele hat dich zu ihrer Party am Freitag, 30. Oktober, eingeladen.</Text>
-          <Text>Lerne ihre besten Freunde kennen:</Text>
-          <form onSubmit = {this.handleSubmit}>
-            <label>
-              Name
-              <input type="text" name={this.state.name} onChange={this.handleNameChange}/>
-            </label>
-            <label>
-              Whatsapp-Nummer
-              <input type="text" phone={this.state.phone} onChange={this.handlePhoneChange}/>
-            </label>
-            <button type="submit">Teilnehmen</button>
-          </form>
-          <StatusBar style="auto" />
+          <Text>Nimm teil und lerne ihre besten Freunde kennen:</Text>
+          <TextInput
+            onChangeText={(text) => this.handleNameChange(text)}
+            placeholder="Name"
+            value={this.state.name}
+            style={styles.input}
+          ></TextInput>
+          <TextInput
+            onChangeText={(text) => this.handlePhoneChange(text)}
+            placeholder="Phone Number"
+            value={this.state.phone}
+            style={styles.input}
+          ></TextInput>
+        <OurButton onPress={() => this.handleSubmit()} label="Teilnehmen"/>
+        <StatusBar style="auto" />
         </View>
       );
     }
@@ -81,26 +87,25 @@ class Friends extends React.Component {
         <View style={{ marginTop: 10}}>
         <Text>Bringe deine Freunde zur Party mit – via Whatsapp!</Text>
         </View>
-        <TouchableOpacity onPress={() => this.invite_whatsapp('https://wa.me/?text=Du%20solltest%20mal%20wieder%20neue%20Leute%20kennenlernen%20!%20Meld%20Dich%20mal%20an:%20https://getustogether.netlify.app/friendsoffriend/'+this.state.submittedID, 'added_number')}>
-          <View
-            style={{
-              backgroundColor: '#195e83',
-              alignItems: 'center',
-              justifyContent: 'center',
-              borderRadius: 15,
-              padding: 15,
-              marginTop: 25,
-              width: 370
-            }}>
-            <Text style={{color: 'white', fontSize: 15, fontWeight: '800'}}>
-              Freunde einladen
-            </Text>
-          </View>
-        </TouchableOpacity>
+        <OurButton onPress={() => this.invite_whatsapp('https://wa.me/?text=Du%20solltest%20mal%20wieder%20neue%20Leute%20kennenlernen%20!%20Meld%20Dich%20mal%20an:%20https://getustogether.netlify.app/friendsoffriend/'+this.state.submittedID, 'added_number')} label="Freunde einladen"/>
         <StatusBar style="auto" />
       </View>
       )
     }
   }
 }
+
+const styles = StyleSheet.create({
+  input: {
+    backgroundColor: '#ffffff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 15,
+    padding: 15,
+    margin: 15,
+    width: 370
+  }
+});
+
+
 export default Friends
