@@ -13,8 +13,8 @@ var firebaseConfig = {
     projectId: "vercouplen",
     storageBucket: "vercouplen.appspot.com",
     messagingSenderId: "648584206579",
-    appId: "1:648584206579:web:f1705ea3b9a12db448ff86",
-    measurementId: "G-NQXRQQH4YF"
+    appId: "1:648584206579:web:c482cac630ad80b348ff86",
+    measurementId: "G-LBTJ547335"
   };
 
 firebase.initializeApp(firebaseConfig);
