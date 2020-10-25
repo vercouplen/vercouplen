@@ -6,15 +6,19 @@ import Besties from './components/besties';
 import Friends from './components/friends';
 import FriendsOfFriends from './components/friendsoffriends';
 import Facilitators from './components/facilitators';
+import OurText from './components/text';
 
 import { Router, Switch, Route } from './routing/routing';
 
 class App extends Component {
   render() {
-
+      console.log(styles.titleText)
       return (
+      <View>
       <View style={styles.container}>
-        <Text style={styles.titleText}>VERCOUPLEN</Text>
+        <OurText style={styles.titleText}>VERCOUPLEN</OurText>
+      </View>
+      <View style={styles.container}>
         <Router>
           <Switch>
             <Route exact path="/" component={Facilitators} />
@@ -25,12 +29,17 @@ class App extends Component {
             </Switch>
         </Router>
       </View>
+      <View style={styles.container}>
+        <OurText style={styles.footerText}>Copyright 2020 Stefan Bielmeier | Christian Hülsemeyer</OurText>
+      </View>
+      </View>
       );
     }
 }
 
 const styles = StyleSheet.create({
   container: {
+    font: 'Inter',
     marginTop: 50,
     flex: 1,
     backgroundColor: '#F5F5F5',
@@ -38,8 +47,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   titleText: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: "bold",
+    margin: 25
+  },
+  footerText: {
+    fontSize: 15,
+    fontWeight: "light",
     margin: 25
   }
 });

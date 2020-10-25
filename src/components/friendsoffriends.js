@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, TextInput, Text, Linking, View } from 'react-native';
 import db from "../firebase/config";
+import OurText from './text';
 
 class FriendsOfFriends extends React.Component {
 
@@ -68,8 +69,8 @@ class FriendsOfFriends extends React.Component {
     if(this.state.stage == 'none') {
       return (
         <View>
-          <Text>{this.state.inviterName} hat Dich zu einer Party am Freitag, 30. Oktober, eingeladen.</Text>
-          <Text>Nimm an der Party teil und lerne neue Leute kennen:</Text>
+          <OurText>{this.state.inviterName} hat Dich zu einer Party am Freitag, 30. Oktober, eingeladen.</OurText>
+          <OurText>Nimm an der Party teil und lerne neue Leute kennen:</OurText>
           <TextInput
             onChangeText={(text) => this.handleNameChange(text)}
             placeholder="Name"
@@ -91,7 +92,7 @@ class FriendsOfFriends extends React.Component {
     if(this.state.stage == 'added_number') {
       return(
       <View>
-        <Text>Die liebe Marissa fügt Dich zur Gruppe am 30. Oktober hinzu. Bis dann!</Text>
+        <OurText>Die liebe Marissa fügt Dich zur Gruppe am 30. Oktober hinzu. Bis dann!</OurText>
         <StatusBar style="auto" />
       </View>
       )

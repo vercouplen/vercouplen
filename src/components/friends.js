@@ -3,6 +3,7 @@ import React from 'react';
 import { Platform, StyleSheet, TextInput, Text, Linking, View, TouchableOpacity} from 'react-native';
 import db from "../firebase/config";
 import OurButton from './button';
+import OurText from './text';
 
 class Friends extends React.Component {
   state = {
@@ -60,8 +61,8 @@ class Friends extends React.Component {
     if(this.state.stage == 'none') {
       return (
         <View>
-          <Text>Marissa Rimmele hat dich zu ihrer Party am Freitag, 30. Oktober, eingeladen.</Text>
-          <Text>Nimm teil und lerne ihre besten Freunde kennen:</Text>
+          <OurText>Marissa Rimmele hat dich zu ihrer Party am Freitag, 30. Oktober, eingeladen.</OurText>
+          <OurText>Nimm teil und lerne ihre besten Freunde kennen:</OurText>
           <TextInput
             onChangeText={(text) => this.handleNameChange(text)}
             placeholder="Name"
@@ -83,9 +84,9 @@ class Friends extends React.Component {
     if(this.state.stage == 'added_number') {
       return(
       <View>
-        <Text>Marissa fügt Dich zur Gruppe am 30. Oktober hinzu.</Text>
+        <OurText>Marissa fügt Dich zur Gruppe am 30. Oktober hinzu.</OurText>
         <View style={{ marginTop: 10}}>
-        <Text>Bringe deine Freunde zur Party mit – via Whatsapp!</Text>
+        <OurText>Bringe deine Freunde zur Party mit – via Whatsapp!</OurText>
         </View>
         <OurButton onPress={() => this.invite_whatsapp('https://wa.me/?text=Du%20solltest%20mal%20wieder%20neue%20Leute%20kennenlernen%20!%20Meld%20Dich%20mal%20an:%20https://getustogether.netlify.app/friendsoffriend/'+this.state.submittedID, 'added_number')} label="Freunde einladen"/>
         <StatusBar style="auto" />

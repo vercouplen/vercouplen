@@ -2,6 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react'
 import {StyleSheet, Text, TextInput, View } from 'react-native';
 import db from "../firebase/config";
+import OurButton from './button';
+import OurText from './text';
 
 class Besties extends React.Component {
   state = {
@@ -11,12 +13,12 @@ class Besties extends React.Component {
   };
 
 
-  handleNameChange = (event) => {
-    this.setState({name: event.target.value});
+  handleNameChange = (text) => {
+    this.setState({name: text});
   }
 
-  handlePhoneChange = (event) => {
-    this.setState({phone: event.target.value});
+  handlePhoneChange = (text) => {
+    this.setState({phone: text});
   }
 
   handleSubmit = (event) => {
@@ -49,19 +51,21 @@ class Besties extends React.Component {
     if(this.state.stage == 'none') {
       return (
         <View>
-          <Text>Marissa hat dich zu ihrer Party am Freitag, 30. Oktober, eingeladen!</Text>
-          <Text>Lerne Marissas erweiterten Freundeskreis kennen:</Text>
-          <form onSubmit = {this.handleSubmit}>
-            <label>
-              Name
-              <input type="text" name={this.state.name} onChange={this.handleNameChange}/>
-            </label>
-            <label>
-              Whatsapp-Nummer
-              <input type="text" phone={this.state.phone} onChange={this.handlePhoneChange}/>
-            </label>
-            <button type="submit">Teilnehmen</button>
-          </form>
+          <OurText>Marissa hat dich zu ihrer Party am Freitag, 30. Oktober, eingeladen!</OurText>
+          <OurText>Lerne Marissas erweiterten Freundeskreis kennen:</OurText>
+          <TextInput
+            onChangeText={(text) => this.handleNameChange(text)}
+            placeholder="Name"
+            value={this.state.name}
+            style={styles.input}
+          ></TextInput>
+          <TextInput
+            onChangeText={(text) => this.handlePhoneChange(text)}
+            placeholder="Phone Number"
+            value={this.state.phone}
+            style={styles.input}
+          ></TextInput>
+        <OurButton onPress={() => this.handleSubmit()} label="Teilnehmen"/>
           <StatusBar style="auto" />
         </View>
       );
@@ -70,11 +74,24 @@ class Besties extends React.Component {
     if(this.state.stage == 'added_number') {
       return(
       <View>
-        <Text>Marissa fügt Dich am 30. Oktober zur Gruppe hinzu.</Text>
+        <OurText>Marissa fügt Dich am 30. Oktober zur Gruppe hinzu.</OurText>
         <StatusBar style="auto" />
       </View>
       )
     }
   }
 }
+
+const styles = StyleSheet.create({
+  input: {
+    backgroundColor: '#ffffff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 15,
+    padding: 15,
+    margin: 15,
+    width: 370
+  }
+});
+
 export default Besties
