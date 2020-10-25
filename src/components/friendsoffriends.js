@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet, TextInput, Text, Linking, View } from 'react-native';
 import db from "../firebase/config";
 import OurText from './text';
+import OurButton from './button';
 
 class FriendsOfFriends extends React.Component {
 
@@ -101,12 +102,14 @@ class FriendsOfFriends extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  form: {
-    padding: 20
-  },
-  titleText: {
-    fontSize: 20,
-    fontWeight: "bold"
+  input: {
+    backgroundColor: '#ffffff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 15,
+    padding: 15,
+    margin: 15,
+    width: 370
   }
 });
 

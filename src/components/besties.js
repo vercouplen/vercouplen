@@ -22,8 +22,9 @@ class Besties extends React.Component {
   }
 
   handleSubmit = (event) => {
-    event.preventDefault();
-
+    if(this.state.name == '' || this.state.phone == '') {
+      return;
+    }
     const friend = {
       name: this.state.name,
       phone: this.state.phone,
