@@ -1,9 +1,6 @@
 // Firebase App (the core Firebase SDK) is always required and
 // must be listed before other Firebase SDKs
-import React from 'react';
 const firebase = require("firebase");
-
-<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script>
 
 // Add the Firebase products that you want to use
 require("firebase/firestore");
@@ -19,11 +16,11 @@ var firebaseConfig = {
     appId: "1:648584206579:web:c482cac630ad80b348ff86",
     measurementId: "G-SM0155Q4EN",
   };
-  
+
 firebase.initializeApp(firebaseConfig);
 
-var db = firebase.firestore();
-var analytics = firebase.analytics();
+const db = firebase.firestore();
+const analytics = firebase.analytics();
 
-
-export default {db, analytics};
+export default db;
+export {db, analytics, firebase};

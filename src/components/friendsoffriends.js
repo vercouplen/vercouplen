@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, TextInput, Text, Linking, View } from 'react-native';
-import firebase from "../firebase/config";
+import {db, analytics} from "../firebase/config";
 import OurText from './text';
 import OurButton from './button';
 
@@ -37,13 +37,14 @@ class FriendsOfFriends extends React.Component {
       phone: this.state.phone,
     }
 
-    firebase.firestore().collection("FriendsOfFriends").add({
+    db.collection("FriendsOfFriends").add({
       Name: friend.name,
       Phone: friend.phone
     })
     .then((docRef) => {
       console.log("document written with ID: ", docRef.id);
       this.setState({stage: 'added_number'});
+      analytics.logEvent('registered_friendsoffriends');
     })
     .catch((error) => {
       console.log("error adding doc", error);
@@ -54,7 +55,7 @@ class FriendsOfFriends extends React.Component {
 
   getInviterName = () => {
     var inviterID = this.props.match.params.friendid;
-    var docRef = firebase.firestore().collection("Friends").doc(inviterID);
+    var docRef = db.collection("Friends").doc(inviterID);
     docRef.get().then((doc) => {
       if (doc.exists) {
         this.setState({inviterName: doc.data().Name})

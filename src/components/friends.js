@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Platform, StyleSheet, TextInput, Text, Linking, View, TouchableOpacity} from 'react-native';
-import firebase from "../firebase/config";
+import {db, analytics} from "../firebase/config";
 import OurButton from './button';
 import OurText from './text';
 import {isMobile} from 'react-device-detect';
@@ -24,6 +24,7 @@ class Friends extends React.Component {
     } else {
       Linking.openURL(url)
     }
+    analytics.logEvent('invitewhatsappclicked_friendsoffriends');
     this.setState({stage: stage})
   }
 
@@ -46,7 +47,7 @@ class Friends extends React.Component {
       phone: this.state.phone,
     }
 
-    firebase.firestore().collection("Friends").add({
+    db.collection("Friends").add({
       Name: friend.name,
       Phone: friend.phone
     })
@@ -54,6 +55,7 @@ class Friends extends React.Component {
       console.log("document written with ID: ", docRef.id);
       this.setState({stage: 'added_number'});
       this.setState({submittedID: docRef.id});
+      analytics.logEvent('registered_friend');
     })
     .catch((error) => {
       console.log("error adding doc", error);

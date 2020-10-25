@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react'
 import {StyleSheet, Text, TextInput, View } from 'react-native';
-import firebase from "../firebase/config";
+import {db, analytics} from "../firebase/config";
 import OurButton from './button';
 import OurText from './text';
 
@@ -30,13 +30,14 @@ class Besties extends React.Component {
       phone: this.state.phone,
     }
 
-    firebase.firestore().collection("Besties").add({
+    db.collection("Besties").add({
       Name: friend.name,
       Phone: friend.phone
     })
     .then((docRef) => {
       console.log("document written with ID: ", docRef.id);
       this.setState({stage: 'added_number'});
+      analytics.logEvent('registered_besties');
     })
     .catch((error) => {
       console.log("error adding doc", error);
