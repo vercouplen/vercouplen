@@ -32,7 +32,7 @@ class Facilitators extends React.Component {
         <View style={{ marginTop: 10}}>
         <OurText>Lade Deine drei besten Freunde zur Party via Whatsapp ein:</OurText>
         </View>
-        <OurButton onPress={() => this.invite_whatsapp('https://wa.me/?text=Du%20solltest%20mal%20wieder%20neue%20Leute%20kennenlernen%20!%20Meld%20Dich%20mal%20an:%20https://getustogether.netlify.app/besties', 'besties_invited')} label="Freunde einladen"/>
+        <OurButton onPress={() => this.invite_whatsapp('https://wa.me/?text=Du%20solltest%20mal%20wieder%20neue%20Leute%20kennenlernen%20!%20Meld%20Dich%20mal%20an:%20https://getustogether.netlify.app/b', 'besties_invited')} label="Freunde einladen"/>
         <StatusBar style="auto" />
       </View>
       );
@@ -47,7 +47,7 @@ class Facilitators extends React.Component {
         <View style={{ marginTop: 10}}>
         <OurText>Lade weitere Freunde und Bekannte ein, die deine besten Freunde kennenlernen sollten:</OurText>
         </View>
-        <OurButton onPress={() => this.invite_whatsapp('https://wa.me/?text=Hey%2C%20lange%20nicht%20gequatscht!%20Ich%20schmeiß%20ne%20kleine%20Virtuelle%20Kennenlernparty%2C%20hast%20du%20Lust%20ein%20paar%20neue%20Leute%20kennenzulernen%3F%20%3A%29%20https://getustogether.netlify.com/friends', 'friends_invited')} label="Freunde einladen"/>
+        <OurButton onPress={() => this.invite_whatsapp('https://wa.me/?text=Hey%2C%20lange%20nicht%20gequatscht!%20Ich%20schmeiß%20ne%20kleine%20Virtuelle%20Kennenlernparty%2C%20hast%20du%20Lust%20ein%20paar%20neue%20Leute%20kennenzulernen%3F%20%3A%29%20https://getustogether.netlify.com/f', 'friends_invited')} label="Freunde einladen"/>
         <StatusBar style="auto" />
         </View>
       );

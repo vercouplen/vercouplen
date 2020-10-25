@@ -16,7 +16,7 @@ class FriendsOfFriends extends React.Component {
     stage: 'none',
     name: '',
     phone: '',
-    inviterName: '',
+    inviterName: 'Unbekannt',
   }
 
 

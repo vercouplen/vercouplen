@@ -16,16 +16,16 @@ class App extends Component {
       return (
       <View>
       <View style={styles.container}>
-        <OurText style={styles.titleText}>VERCOUPLEN</OurText>
+        <OurText style={styles.titleText}>GetUsTogether</OurText>
       </View>
       <View style={styles.container}>
         <Router>
           <Switch>
             <Route exact path="/" component={Facilitators} />
-            <Route path="/besties" component={Besties} />
-            <Route path="/friends" component={Friends}/>
-            <Route exact path="/friendsoffriends" component={FriendsOfFriends}/>
-            <Route path="/friendsoffriends/:friendid" component={FriendsOfFriends}/>
+            <Route path="/b" component={Besties} />
+            <Route path="/f" component={Friends}/>
+            <Route exact path="/ff" component={FriendsOfFriends}/>
+            <Route path="/ff/:friendid" component={FriendsOfFriends}/>
             </Switch>
         </Router>
       </View>
