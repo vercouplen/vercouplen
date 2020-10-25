@@ -42,7 +42,7 @@ class Facilitators extends React.Component {
         <OurText style={styles.titleText}>Schritt 1</OurText>
         </View>
         <View style={{ marginTop: 10}}>
-        <OurText>Lade Deine drei besten Freunde zur Party via Whatsapp ein:</OurText>
+        <OurText>Lade Deine drei besten Freunde in Deiner Stadt zur Party via Whatsapp ein:</OurText>
         </View>
         <OurButton onPress={() => this.invite_whatsapp('https://wa.me/?text=Hey%2C+du+solltest+mal+wieder+neue+Leute+kennenlernen+%21+Ich+veranstalte+eine+kleine+Party+auf+WhatsApp+%3A%29+Meld+Dich+mal+an%3A+https%3A%2F%2Fgetustogether.netlify.app%2Fb', 'besties_invited')} label="Freunde einladen"/>
         <StatusBar style="auto" />
@@ -52,7 +52,7 @@ class Facilitators extends React.Component {
         <OurText style={styles.titleText}>Schritt 2</OurText>
         </View>
         <View style={{ marginTop: 10}}>
-        <OurText>Lade weitere Freunde und Bekannte ein, die deine besten Freunde kennenlernen sollten:</OurText>
+        <OurText>Lade weitere Freunde und Bekannte aus Deiner Stadt ein, die deine besten Freunde kennenlernen sollten:</OurText>
         </View>
         <OurButtonPlaceholder onPress={() => this.invite_whatsapp('https://wa.me/?text=Na%2C+hoffe%2C+es+geht+dir+gut%21+%3A%29+Ich+schmei%C3%9F+ne+kleine+virtuelle+Party+zum+Kennenlernen+auf+WhatsApp%2C+hast+du+Lust+ein+paar+neue+Leute+kennenzulernen%3F+https%3A%2F%2Fgetustogether.netlify.com%2Ff', 'friends_invited')} label="Freunde einladen"/>
         <StatusBar style="auto" />
@@ -70,7 +70,7 @@ class Facilitators extends React.Component {
         <OurText style={styles.titleText}>Schritt 2</OurText>
         </View>
         <View style={{ marginTop: 10}}>
-        <OurText>Lade weitere Freunde und Bekannte ein, die deine besten Freunde kennenlernen sollten:</OurText>
+        <OurText>Lade weitere Freunde und Bekannte aus Deiner Stadt ein, die deine besten Freunde kennenlernen sollten:</OurText>
         </View>
         <OurButton onPress={() => this.invite_whatsapp('https://wa.me/?text=Na%2C+hoffe%2C+es+geht+dir+gut%21+%3A%29+Ich+schmei%C3%9F+ne+kleine+virtuelle+Party+zum+Kennenlernen+auf+WhatsApp%2C+hast+du+Lust+ein+paar+neue+Leute+kennenzulernen%3F+https%3A%2F%2Fgetustogether.netlify.com%2Ff', 'friends_invited')} label="Freunde einladen"/>
         <StatusBar style="auto" />
@@ -82,7 +82,7 @@ class Facilitators extends React.Component {
       return (
         <View style={styles.padding}>
         <OurText style={styles.titleText}>Fertig</OurText>
-        <OurText>Am 30. Oktober laden wir alle Teilnehmer in eine Whatsappgruppe ein.{"\n"}
+        <OurText>Am 30. Oktober laden wir automatisch alle Teilnehmer in eine Whatsappgruppe ein.{"\n"}
           Bei Fragen bitte Stefan & Chrisi schreiben.</OurText>
         <StatusBar style="auto" />
         </View>
