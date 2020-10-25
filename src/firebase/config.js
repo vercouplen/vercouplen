@@ -14,7 +14,6 @@ var firebaseConfig = {
     storageBucket: "vercouplen.appspot.com",
     messagingSenderId: "648584206579",
     appId: "1:648584206579:web:c482cac630ad80b348ff86",
-    measurementId: "G-73WL1HHVE9",
   };
 
 firebase.initializeApp(firebaseConfig);
