@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react'
 import {StyleSheet, Text, TextInput, View } from 'react-native';
-import db from "../firebase/config";
+import firebase from "../firebase/config";
 import OurButton from './button';
 import OurText from './text';
 
@@ -30,7 +30,7 @@ class Besties extends React.Component {
       phone: this.state.phone,
     }
 
-    db.collection("Besties").add({
+    firebase.firestore().collection("Besties").add({
       Name: friend.name,
       Phone: friend.phone
     })

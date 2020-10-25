@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, TextInput, Text, Linking, View } from 'react-native';
-import db from "../firebase/config";
+import firebase from "../firebase/config";
 import OurText from './text';
 import OurButton from './button';
 
@@ -37,7 +37,7 @@ class FriendsOfFriends extends React.Component {
       phone: this.state.phone,
     }
 
-    db.collection("FriendsOfFriends").add({
+    firebase.firestore().collection("FriendsOfFriends").add({
       Name: friend.name,
       Phone: friend.phone
     })
@@ -54,7 +54,7 @@ class FriendsOfFriends extends React.Component {
 
   getInviterName = () => {
     var inviterID = this.props.match.params.friendid;
-    var docRef = db.collection("Friends").doc(inviterID);
+    var docRef = firebase.firestore().collection("Friends").doc(inviterID);
     docRef.get().then((doc) => {
       if (doc.exists) {
         this.setState({inviterName: doc.data().Name})

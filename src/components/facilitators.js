@@ -4,6 +4,7 @@ import { Platform, TouchableOpacity, StyleSheet, Text, Linking, View, Button } f
 import { OurButton, OurButtonPlaceholder} from './button';
 import OurText from './text';
 import {isMobile} from 'react-device-detect';
+import analytics from '../firebase/config';
 
 class Facilitators extends React.Component {
   state = {
@@ -24,6 +25,7 @@ class Facilitators extends React.Component {
     } else {
       Linking.openURL(url)
     }
+    analytics.logEvent('invitewhatsappclicked');
     this.setState({stage: stage})
   }
 
