@@ -22,6 +22,7 @@ class OurText extends Component {
 const styles = StyleSheet.create({
     text: {
       fontFamily: 'Inter',
+      paddingLeft: 20
     }
   });
 

@@ -12,9 +12,8 @@ import { Router, Switch, Route } from './routing/routing';
 
 class App extends Component {
   render() {
-      console.log(styles.titleText)
       return (
-      <View>
+      <View style={styles.base}>
       <View style={styles.container}>
         <OurText style={styles.titleText}>GetUsTogether</OurText>
       </View>
@@ -30,7 +29,7 @@ class App extends Component {
         </Router>
       </View>
       <View style={styles.container}>
-        <OurText style={styles.footerText}>Copyright 2020 Stefan Bielmeier | Christian Hülsemeyer</OurText>
+      <OurText style={styles.footerText}>Copyright 2020 GetUsTogether{"\n"}Stefan Bielmeier{"\n"}Christian Hülsemeyer</OurText>
       </View>
       </View>
       );
@@ -38,18 +37,26 @@ class App extends Component {
 }
 
 const styles = StyleSheet.create({
+  base: {
+    flex: 1,
+  },
   container: {
     font: 'Inter',
     marginTop: 50,
-    flex: 1,
+    margin: 0,
+    paddingTop: 20,
     backgroundColor: '#F5F5F5',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   titleText: {
     fontSize: 18,
     fontWeight: "bold",
-    margin: 25
+    margin: 25,
+    flex: 1,
+    marginTop: 30,
+    height: 60,
+    margin: 'auto',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   footerText: {
     fontSize: 15,

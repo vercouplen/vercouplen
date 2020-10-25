@@ -28,8 +28,10 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       borderRadius: 15,
       padding: 15,
-      marginTop: 0,
-      width: 370
+      marginTop: 15,
+      marginBottom: 15,
+      marginLeft: 'auto',
+      marginRight: 'auto',
     }
   });
 

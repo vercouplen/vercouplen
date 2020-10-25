@@ -90,8 +90,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 15,
     padding: 15,
-    margin: 15,
-    width: 370
+    marginTop: 15,
+    marginBottom: 15,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    width: '90%'
   }
 });
 
