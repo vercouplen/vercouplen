@@ -4,6 +4,7 @@ import { Platform, StyleSheet, TextInput, Text, Linking, View, TouchableOpacity}
 import db from "../firebase/config";
 import OurButton from './button';
 import OurText from './text';
+import {isMobile} from 'react-device-detect';
 
 class Friends extends React.Component {
   state = {
@@ -15,7 +16,11 @@ class Friends extends React.Component {
 
   invite_whatsapp(url, stage) {
     if(Platform.OS == 'web'){
-      window.open(url, '_blank');
+      if(isMobile) {
+        window.open(url, '_self');
+      } else {
+        window.open(url, '_blank');
+      }
     } else {
       Linking.openURL(url)
     }

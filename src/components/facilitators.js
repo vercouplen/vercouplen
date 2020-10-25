@@ -3,6 +3,7 @@ import React from 'react'
 import { Platform, TouchableOpacity, StyleSheet, Text, Linking, View, Button } from 'react-native';
 import OurButton from './button';
 import OurText from './text';
+import {isMobile} from 'react-device-detect';
 
 class Facilitators extends React.Component {
   state = {
@@ -15,7 +16,11 @@ class Facilitators extends React.Component {
   
   invite_whatsapp(url, stage) {
     if(Platform.OS == 'web'){
-      window.open(url, '_blank');
+      if(isMobile) {
+        window.open(url, '_self');
+      } else {
+        window.open(url, '_blank');
+      }
     } else {
       Linking.openURL(url)
     }
