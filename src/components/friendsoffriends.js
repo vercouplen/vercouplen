@@ -72,7 +72,7 @@ class FriendsOfFriends extends React.Component {
       return (
         <View>
           <OurText>{this.state.inviterName} hat Dich zu einer Party am Freitag, 30. Oktober, eingeladen.</OurText>
-          <OurText>Nimm an der Party teil und lerne neue Leute kennen:</OurText>
+          <OurText>Nimm an der Party teil und lerne neue Leute aus Deiner Stadt kennen. </OurText>
           <TextInput
             onChangeText={(text) => this.handleNameChange(text)}
             placeholder="Name"
@@ -94,7 +94,7 @@ class FriendsOfFriends extends React.Component {
     if(this.state.stage == 'added_number') {
       return(
       <View>
-        <OurText>Die liebe Marissa fügt Dich zur Gruppe am 30. Oktober hinzu. Bis dann!</OurText>
+        <OurText>{this.state.inviterName} fügt Dich zur Gruppe am 30. Oktober hinzu. Bis dann!</OurText>
         <StatusBar style="auto" />
       </View>
       )

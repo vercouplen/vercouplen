@@ -69,7 +69,7 @@ class Friends extends React.Component {
       return (
         <View>
           <OurText>Marissa Rimmele hat dich zu ihrer Party am Freitag, 30. Oktober, eingeladen.</OurText>
-          <OurText>Nimm teil und lerne ihre besten Freunde kennen:</OurText>
+          <OurText>Nimm teil und lerne neue Leute aus Deiner Stadt kennen!</OurText>
           <TextInput
             onChangeText={(text) => this.handleNameChange(text)}
             placeholder="Name"
@@ -91,9 +91,9 @@ class Friends extends React.Component {
     if(this.state.stage == 'added_number') {
       return(
       <View>
-        <OurText>Marissa fügt Dich zur Gruppe am 30. Oktober hinzu.</OurText>
+        <OurText>Super! Marissa fügt Dich zur Gruppe am 30. Oktober um 12 Uhr hinzu.</OurText>
         <View style={{ marginTop: 10}}>
-        <OurText>Bringe deine Freunde zur Party mit – via Whatsapp!</OurText>
+        <OurText>Bis dahin: Bringe gerne Deine Freunde zur Party mit – via Whatsapp!</OurText>
         </View>
         <OurButton onPress={() => this.invite_whatsapp('https://wa.me/?text=Hey%2C+hoffe%2C+es+geht+dir+gut%21+Ich+veranstalte+eine+kleine+virtuelle+WhatsApp-Party+um+Kennenlernen%2C+meld+dich+mal+an%3A+https%3A%2F%2Fgetustogether.netlify.app%2Fff%2F'+this.state.submittedID, 'added_number')} label="Freunde einladen"/>
         <StatusBar style="auto" />
