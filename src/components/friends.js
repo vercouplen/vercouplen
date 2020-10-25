@@ -88,7 +88,7 @@ class Friends extends React.Component {
         <View style={{ marginTop: 10}}>
         <OurText>Bringe deine Freunde zur Party mit – via Whatsapp!</OurText>
         </View>
-        <OurButton onPress={() => this.invite_whatsapp('https://wa.me/?text=Du%20solltest%20mal%20wieder%20neue%20Leute%20kennenlernen%20!%20Meld%20Dich%20mal%20an:%20https://getustogether.netlify.app/friendsoffriend/'+this.state.submittedID, 'added_number')} label="Freunde einladen"/>
+        <OurButton onPress={() => this.invite_whatsapp('https://wa.me/?text=Du%20solltest%20mal%20wieder%20neue%20Leute%20kennenlernen%20!%20Meld%20Dich%20mal%20an:%20https://getustogether.netlify.app/friendsoffriends/'+this.state.submittedID, 'added_number')} label="Freunde einladen"/>
         <StatusBar style="auto" />
       </View>
       )
