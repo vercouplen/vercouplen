@@ -54,7 +54,7 @@ class Besties extends React.Component {
       return (
         <View>
           <OurText>Marissa hat dich zu ihrer Party am Freitag, 30. Oktober, eingeladen!</OurText>
-          <OurText>Lerne Marissas erweiterten Freundeskreis kennen:</OurText>
+          <OurText>Lerne Marissas weitere Freunde und deren +1s aus Deiner Stadt kennen.</OurText>
           <TextInput
             onChangeText={(text) => this.handleNameChange(text)}
             placeholder="Name"
@@ -76,7 +76,7 @@ class Besties extends React.Component {
     if(this.state.stage == 'added_number') {
       return(
       <View>
-        <OurText>Marissa fügt Dich am 30. Oktober zur Gruppe hinzu.</OurText>
+        <OurText>Klasse! Marissa fügt Dich am 30. Oktober um 12 Uhr zur Gruppe hinzu.</OurText>
         <StatusBar style="auto" />
       </View>
       )
