@@ -94,7 +94,7 @@ class FriendsOfFriends extends React.Component {
     if(this.state.stage == 'added_number') {
       return(
       <View>
-        <OurText>{this.state.inviterName} fügt Dich zur Gruppe am 30. Oktober hinzu. Bis dann!</OurText>
+        <OurText>{this.state.inviterName} fügt Dich zur Partygruppe am 30. Oktober hinzu. Bis dann!</OurText>
         <StatusBar style="auto" />
       </View>
       )

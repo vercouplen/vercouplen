@@ -68,7 +68,7 @@ class Friends extends React.Component {
     if(this.state.stage == 'none') {
       return (
         <View>
-          <OurText>Marissa Rimmele hat dich zu ihrer Party am Freitag, 30. Oktober, eingeladen.</OurText>
+          <OurText>Simone Kilian hat dich zu ihrer Party am Freitag, 30. Oktober, eingeladen.</OurText>
           <OurText>Nimm teil und lerne neue Leute aus Deiner Stadt kennen!</OurText>
           <TextInput
             onChangeText={(text) => this.handleNameChange(text)}
@@ -91,7 +91,7 @@ class Friends extends React.Component {
     if(this.state.stage == 'added_number') {
       return(
       <View>
-        <OurText>Super! Marissa fügt Dich zur Gruppe am 30. Oktober um 12 Uhr hinzu.</OurText>
+        <OurText>Super! Simone fügt Dich und alle anderen Teilnehmer zur Gruppe am 30. Oktober um 12 Uhr hinzu.</OurText>
         <View style={{ marginTop: 10}}>
         <OurText>Bis dahin: Bringe gerne Deine Freunde zur Party mit – via Whatsapp!</OurText>
         </View>

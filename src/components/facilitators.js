@@ -82,7 +82,7 @@ class Facilitators extends React.Component {
       return (
         <View style={styles.padding}>
         <OurText style={styles.titleText}>Fertig</OurText>
-        <OurText>Am 30. Oktober laden wir automatisch alle Teilnehmer in eine Whatsappgruppe ein.{"\n"}
+        <OurText>Am 30. Oktober laden wir Dich und alle Teilnehmer automatisch in eine Whatsappgruppe ein.{"\n"}
           Bei Fragen bitte Stefan & Chrisi schreiben.</OurText>
         <StatusBar style="auto" />
         </View>

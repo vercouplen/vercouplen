@@ -53,8 +53,8 @@ class Besties extends React.Component {
     if(this.state.stage == 'none') {
       return (
         <View>
-          <OurText>Marissa hat dich zu ihrer Party am Freitag, 30. Oktober, eingeladen!</OurText>
-          <OurText>Lerne Marissas weitere Freunde und deren +1s aus Deiner Stadt kennen.</OurText>
+          <OurText>Simone Kilian hat dich zu ihrer Party am Freitag, 30. Oktober, eingeladen!</OurText>
+          <OurText>Lerne Simones weitere Freunde und deren +1s aus Deiner Stadt kennen.</OurText>
           <TextInput
             onChangeText={(text) => this.handleNameChange(text)}
             placeholder="Name"
@@ -76,7 +76,7 @@ class Besties extends React.Component {
     if(this.state.stage == 'added_number') {
       return(
       <View>
-        <OurText>Klasse! Marissa fügt Dich am 30. Oktober um 12 Uhr zur Gruppe hinzu.</OurText>
+        <OurText>Klasse! Simone fügt Dich und alle anderen Teilnhemer am 30. Oktober um 12 Uhr zur Gruppe hinzu.</OurText>
         <StatusBar style="auto" />
       </View>
       )
