@@ -46,7 +46,7 @@ module.exports = {
     alias: {
       "react-native": "react-native-web"
     },
-    extensions: [".web.js", ".js"]
+    extensions: [".web.js", ".js"],
   },
   output: {
     filename: 'bundle.js',
