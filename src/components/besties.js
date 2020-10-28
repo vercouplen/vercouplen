@@ -53,8 +53,8 @@ class Besties extends React.Component {
     if(this.state.stage == 'none') {
       return (
         <View>
-          <OurText>Simone Kilian hat dich zu ihrer Party am Freitag, 30. Oktober, eingeladen!</OurText>
-          <OurText>Lerne Simones weitere Freunde und deren +1s aus Deiner Stadt kennen.</OurText>
+          <OurText>Eine Freundin oder Freund hat Dich zu einem GetUsTogether Whatsappchat eingeladen.</OurText>
+          <OurText>Lerne jetzt Freunde von Freunden aus Deiner Peer Group in Deiner Stadt kennen – wie auf einer Party. Keine Random Leute – Dein echtes Netzwerk.</OurText>
           <TextInput
             onChangeText={(text) => this.handleNameChange(text)}
             placeholder="Name"
@@ -76,7 +76,7 @@ class Besties extends React.Component {
     if(this.state.stage == 'added_number') {
       return(
       <View>
-        <OurText>Klasse! Simone fügt Dich und alle anderen Teilnhemer am 30. Oktober um 12 Uhr zur Gruppe hinzu.</OurText>
+        <OurText>Klasse! GetUsTogether fügt Dich zusammen mit den – 15 – anderen Teilnhemern alle zur selben Zeit zur Whatsappgruppe hinzu.</OurText>
         <StatusBar style="auto" />
       </View>
       )

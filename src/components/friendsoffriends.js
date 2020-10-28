@@ -71,8 +71,8 @@ class FriendsOfFriends extends React.Component {
     if(this.state.stage == 'none') {
       return (
         <View>
-          <OurText>{this.state.inviterName} hat Dich zu einer Party am Freitag, 30. Oktober, eingeladen.</OurText>
-          <OurText>Nimm an der Party teil und lerne neue Leute aus Deiner Stadt kennen. </OurText>
+          <OurText>{this.state.inviterName} hat Dich zu einem GetUsTogether Whatsappchat eingeladen.</OurText>
+          <OurText>Lerne jetzt neue Freunde von Freunden aus Deiner Peer Group in Deiner Stadt kennen – wie auf einer Party. Keine Random Leute – Dein echtes Netzwerk.</OurText>
           <TextInput
             onChangeText={(text) => this.handleNameChange(text)}
             placeholder="Name"
@@ -94,7 +94,7 @@ class FriendsOfFriends extends React.Component {
     if(this.state.stage == 'added_number') {
       return(
       <View>
-        <OurText>{this.state.inviterName} fügt Dich zur Partygruppe am 30. Oktober hinzu. Bis dann!</OurText>
+        <OurText>Super! {this.state.inviterName} und GetUsTogether fügt Dich zusammen mit den – 15 – anderen Teilnhemern alle zur selben Zeit zur Whatsappgruppe hinzu.</OurText>
         <StatusBar style="auto" />
       </View>
       )

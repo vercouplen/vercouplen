@@ -68,8 +68,8 @@ class Friends extends React.Component {
     if(this.state.stage == 'none') {
       return (
         <View>
-          <OurText>Simone Kilian hat dich zu ihrer Party am Freitag, 30. Oktober, eingeladen.</OurText>
-          <OurText>Nimm teil und lerne neue Leute aus Deiner Stadt kennen!</OurText>
+          <OurText>Eine Freundin oder Freund hat Dich zu einem GetUsTogether Whatsappchat eingeladen.</OurText>
+          <OurText>Lerne jetzt Freunde von Freunden aus Deiner Peer Group in Deiner Stadt kennen – wie auf einer Party. Keine Random Leute – Dein echtes Netzwerk.</OurText>
           <TextInput
             onChangeText={(text) => this.handleNameChange(text)}
             placeholder="Name"
@@ -91,9 +91,9 @@ class Friends extends React.Component {
     if(this.state.stage == 'added_number') {
       return(
       <View>
-        <OurText>Super! Simone fügt Dich und alle anderen Teilnehmer zur Gruppe am 30. Oktober um 12 Uhr hinzu.</OurText>
+        <OurText>Super! GetUsTogether fügt Dich zusammen mit den – 15 – anderen Teilnhemern alle zur selben Zeit zur Whatsappgruppe hinzu.</OurText>
         <View style={{ marginTop: 10}}>
-        <OurText>Bis dahin: Bringe gerne Deine Freunde zur Party mit – via Whatsapp!</OurText>
+        <OurText>Lad' gerne auch Deine Freunde zum Kennenlernen auf GetUsTogether ein – via Whatsapp!</OurText>
         </View>
         <OurButton onPress={() => this.invite_whatsapp('https://wa.me/?text=Hey%2C+hoffe%2C+es+geht+dir+gut%21+Ich+veranstalte+eine+kleine+virtuelle+WhatsApp-Party+um+Kennenlernen%2C+meld+dich+mal+an%3A+https%3A%2F%2Fgetustogether.netlify.app%2Fff%2F'+this.state.submittedID, 'added_number')} label="Freunde einladen"/>
         <StatusBar style="auto" />
