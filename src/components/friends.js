@@ -69,7 +69,7 @@ class Friends extends React.Component {
       return (
         <View>
           <OurText>Eine Freundin oder Freund hat Dich zu einem GetUsTogether Whatsappchat eingeladen.</OurText>
-          <OurText>Lerne jetzt Freunde von Freunden aus Deiner Peer Group in Deiner Stadt kennen – wie auf einer Party. Keine Random Leute – Dein echtes Netzwerk.</OurText>
+          <OurText>Lerne jetzt neue Freunde von Freunden aus Deiner Peer Group in Deiner Stadt kennen – wie auf einer Party. Keine Random Leute – Dein echtes Netzwerk.</OurText>
           <TextInput
             onChangeText={(text) => this.handleNameChange(text)}
             placeholder="Name"
